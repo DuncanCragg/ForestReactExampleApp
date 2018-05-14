@@ -3805,9 +3805,9 @@ foreach@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/foreach/-/foreach-2.0.5.tgz#0bee005018aeb260d0a3af3ae658dd0136ec1b99"
 
-forest-react@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/forest-react/-/forest-react-0.0.2.tgz#79d598bff8c1247552aec12da35f3f5ff260685f"
+forest-react@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/forest-react/-/forest-react-0.0.3.tgz#0b2f73f1245485ba4d0c2718871ea7320ecdf182"
   dependencies:
     classnames "^2.2.5"
     lodash "^4.17.4"
