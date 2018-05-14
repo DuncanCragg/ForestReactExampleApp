@@ -1,0 +1,38 @@
+{
+  "name": "forestreactexampleapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "web": "react-scripts start",
+    "build-web": "react-scripts build",
+    "test-web": "react-scripts test --env=jsdom",
+    "eject-web": "react-scripts eject",
+    "android": "react-native run-android",
+    "start": "react-native start",
+    "ios": "react-native run-ios",
+    "test-native": "node node_modules/jest/bin/jest.js --watch",
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^22.4.3",
+    "react": "16.3.1",
+    "react-art": "^16.3.2",
+    "react-dom": "^16.3.1",
+    "react-native": "^0.55.4",
+    "react-native-web": "^0.6.1",
+    "react-scripts": "1.1.4",
+    "forest-react": "0.0.2"
+  },
+  "devDependencies": {
+    "babel-plugin-react-native-web": "^0.6.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx-source": "^6.22.0",
+    "babel-preset-react-native-stage-0": "^1.0.1",
+    "flow-bin": "^0.67.0",
+    "jest-react-native": "^18.0.0",
+    "react-test-renderer": "16.3.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
