@@ -4,51 +4,48 @@ import Forest from 'forest-react';
 
 // ------------------------------------
 
-function renderMin(state, userState){
-  return(
-    <View>
+class Min extends Forest {
+  render(){
+    return(
       <View>
         <View>
-          {userState.Button('inc', {label: 'Increment', style: stylesMin.touchableText})}
-          <Text style={stylesMin.touchableText}>
-            Count: {state('counter')}
-          </Text>
+          <View>
+            {this.Button('inc', {label: 'Increment', style: stylesMin.touchableText})}
+            <Text style={stylesMin.touchableText}>
+              Count: {this.object('counter')}
+            </Text>
+          </View>
         </View>
       </View>
-    </View>
-  );
+    );
+  }
 }
+
+const uids = Forest.cacheObjects(
+  [{ evaluate: evalMin,
+     is: 'minimal',
+     counter: 17,
+  }]
+);
 
 function mergeObjects(a, b, c){ // ReactNative breaks the spec
   return Object.assign(a, b || {}, c || {});
 }
 
-function evalMin(state){
-  const incrementPushed  = !state('inc') && state('userState.inc');
+function evalMin(object){
+  const incrementPushed  = !object('inc') && object('userState.inc');
   return mergeObjects({},
-    incrementPushed         && { counter: state('counter') + 1 },
-    true                    && { inc: state('userState.inc') },
+    incrementPushed         && { counter: object('counter') + 1 },
+    true                    && { inc: object('userState.inc') },
   );
 }
-
-const renderers = {
-  'minimal': renderMin
-};
-
-const ForestApp = Forest.storeObjectsInComponent(
-  [{ evaluate: evalMin,
-     is: 'minimal',
-     counter: 17,
-  }],
-  renderers
-);
 
 export default class App extends Component {
   render() {
     return (
       <View style={stylesOuter.app}>
         <View style={stylesOuter.appHeader}>
-          {ForestApp}
+          <Min uid={uids[0]} />
         </View>
       </View>
     )
