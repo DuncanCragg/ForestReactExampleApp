@@ -22,14 +22,14 @@ class Min extends Forest {
 }
 
 const uids = Forest.cacheObjects(
-  [{ evaluate: evalMin,
+  [{ Evaluator: evalMin,
      is: 'minimal',
      counter: 17,
   }]
 );
 
-function mergeObjects(a, b, c){ // ReactNative breaks the spec
-  return Object.assign(a, b || {}, c || {});
+function mergeObjects(a, ...b){ // ReactNative breaks the spec
+  return Object.assign(a, ...(b.map(x => x || {})));
 }
 
 function evalMin(object){
